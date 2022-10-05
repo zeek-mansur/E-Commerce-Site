@@ -6,7 +6,7 @@
   --text-color: #999;
   --primary-color: #de6f1b;
   --highlight-color: #d13267;
-  --bg-color: #f4f4f4;
+  --bg-color: #fff;
 }
 /* base styles */
 body {
@@ -16,7 +16,7 @@ body {
   background: var(--bg-color);
 }
 ul, li, p, h1, h2, h3, h4 {
-  margin: 5px;
+  margin: 10px;
   padding: 0;
 }
 ul {
