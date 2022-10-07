@@ -12,17 +12,24 @@ import './Sneakers.css'
 
 import React, { useState } from 'react'
 
-export default function Sneakers() {
+export default function Sneakers({handleOpen}) {
 
     let [productImage, setProductImage] = useState(Product1)
     const [isActive, setIsActive] = useState(false)
     
-   
-    
     const handleClick = () => {
-        
             
            setIsActive (true)
+    }
+
+    const handleAdd = ()  => {
+
+
+    }
+
+    const handleReduce = ()  => {
+
+        
     }
 
   return (
@@ -31,7 +38,7 @@ export default function Sneakers() {
         <div className='products'> 
             <div className='sneakers'>
             <img 
-                src={productImage} alt = 'Sneakers'>
+                src={productImage} alt = 'Sneakers' onClick={handleOpen}>
             </img>
             </div>
             <div className='thumbnail-img'>
@@ -74,7 +81,11 @@ export default function Sneakers() {
             <p>$125.00</p>
             <p>50%</p>
             <p>$250.00</p>
+            <button className='cart-item-remove'>-</button>
+            <span>0</span>
+            <button className='cart-item-add'>+</button>
             <button className='btn'>Add to Cart</button>
+            
         </div>
     </div>  
   )

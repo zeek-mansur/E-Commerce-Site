@@ -48,4 +48,9 @@
     height: 100%;
 }
 
+.navbar a {
+    color: #333;
+    text-decoration: none;
+
+  }
 

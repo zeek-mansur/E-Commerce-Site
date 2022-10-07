@@ -1,5 +1,6 @@
 import Avatar from '../assets/image-avatar.png'
 import Cart from '../assets/icon-cart.svg'
+import { Link } from 'react-router-dom'
 // styles 
 import './Navbar.css'
 
@@ -11,16 +12,16 @@ export default function NavBar() {
       <nav className="navbar">
       <ul>
         <li className="logo">
-          <span>sneakers</span>
+         <Link to = '/'><span>sneakers</span></Link>
         </li>
        <div className='nav-links'>
-       <li>Collections</li>
-        <li>Men</li>
-        <li>Women</li>
-        <li>About</li>
+       <li><Link to = './collections'>Collections</Link></li>
+        <li><Link to = './men'>Men</Link></li>
+        <li><Link to = './women'>Women</Link> </li>
+        <li><Link to = './men'>About</Link> </li>
        </div>
         <li>
-        <img src ={Cart} alt = 'Cart'></img>
+        <Link to = './cart'><img src ={Cart} alt = 'Cart'></img></Link> 
         </li>
        <li className='avatar'>
         <img src={Avatar} alt = 'Avatar'></img>
