@@ -1,0 +1,31 @@
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+  }
+  .modal {
+    padding: 0px;
+    max-width: 500px;
+    margin: 140px auto;
+    background: transparent;
+    border-radius: 10px;
+  }
+  
+  .modal-image {
+
+    display: inline-block;
+    width: 450px;
+    height: 450px;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.modal img {
+
+    width: 100%;
+    height: 100%;
+}
