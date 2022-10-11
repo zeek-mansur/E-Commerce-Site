@@ -18,7 +18,7 @@ export default function NavBar() {
        <li><Link to = './collections'>Collections</Link></li>
         <li><Link to = './men'>Men</Link></li>
         <li><Link to = './women'>Women</Link> </li>
-        <li><Link to = './men'>About</Link> </li>
+        <li><Link to = './about'>About</Link> </li>
        </div>
         <li>
         <Link to = './cart'><img src ={Cart} alt = 'Cart'></img></Link> 

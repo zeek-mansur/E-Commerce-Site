@@ -1,4 +1,4 @@
-import './Women.css'
+import './Women'
 
 import React from 'react'
 
