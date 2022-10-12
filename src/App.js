@@ -39,6 +39,7 @@ function App() {
 
   const [showModal, setShowModal] = useState(false)
   const [cart, setCart] = useState([])
+  const [amount, setAmount] = useState(1) 
 
   const handleClose = () => {
         setShowModal(false)
@@ -48,12 +49,25 @@ function App() {
     setShowModal(true)
   }  
   
-  const handleAddToCart = (items) => {
+   const increase = () => {
+    setAmount(count => count + 1)
+ }
 
-    setCart([...cart, items])
-    console.log(cart)
-   }
+ const decrease = () => {
+  if (amount > 1) {
+             setAmount(count => count - 1)
+  }
+  
+ }
 
+ const handleAddToCart = (items) => {
+
+  setCart([...cart, items])
+
+ }
+
+ 
+   
   return (
     <div className="App">
       
@@ -61,8 +75,8 @@ function App() {
       <BrowserRouter>
        <NavBar />
         <Routes>
-        <Route path="/" element={ <Sneakers handleOpen = {handleOpen} handleAddToCart = {handleAddToCart} items = {items} />} />
-        <Route path="/cart" element={ <Cart cart = {cart} setCart = {setCart}/>} />
+        <Route path="/" element={ <Sneakers handleOpen = {handleOpen} handleAddToCart = {handleAddToCart} items = {items} amount = {amount} increase = {increase} decrease = {decrease} />} />
+        <Route path="/cart" element={ <Cart cart = {cart} setCart = {setCart} amount= {amount} />} />
         <Route path="/men" element={ <Men />} />
         <Route path="/women" element={ <Women />} />
         <Route path="/collections" element={ <Collections />} />

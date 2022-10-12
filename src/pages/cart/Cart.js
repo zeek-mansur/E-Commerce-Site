@@ -2,7 +2,8 @@ import './Cart.css'
 
 import React from 'react'
 
-export default function Cart({cart, setCart}) {
+export default function Cart({cart, setCart, amount}) {
+
   return (
     <div>
       <span className='header'> Cart </span>
@@ -11,7 +12,7 @@ export default function Cart({cart, setCart}) {
           <div key={item.title}>
             <img className='sneakers' src={item.picture[0]} alt="product" />
             <h4>{item.title}</h4>
-            <p>£{item.price}</p>
+            <p>${item.price} x {amount} <span>${item.price * amount}</span></p>
           </div>
         ))}
       </div>

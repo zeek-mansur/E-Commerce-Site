@@ -4,22 +4,14 @@ import './Sneakers.css'
 
 import { useState } from "react"
 
-export default function Sneakers({handleOpen, handleAddToCart, items}) {
-  let amount = 1
- 
+export default function Sneakers({handleOpen, handleAddToCart, items, amount, increase, decrease}) {
+  
   const [productImage, setProductImage] = useState(Product1)
-  const [isActive, setIsActive] = useState(false)    
+  const [isActive, setIsActive] = useState(false) 
+   
   const handleClick = () => {
             
     setIsActive (true)
-}
-
-const handleAdd = ()  => {
-
-}
-
-const handleReduce = ()  => {
-
 }
 
   return (
@@ -69,14 +61,14 @@ const handleReduce = ()  => {
             <p>{item.Detail}</p>
             <p>£{item.price}</p>
             <p>50%</p>
-            <button className='cart-item-remove'>-</button>
+            <button className='cart-item-remove' onClick={decrease}>-</button>
             <span>{amount}</span>
-            <button className='cart-item-add'>+</button>
+            <button className='cart-item-add' onClick={increase}>+</button>
             <button className='btn' onClick={() =>handleAddToCart(item)}>Add to Cart</button>
         </div>
           </div>   
         ))}
         </div>  
   )
-}
-
+        
+    }
