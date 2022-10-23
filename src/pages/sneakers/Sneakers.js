@@ -9,11 +9,17 @@ export default function Sneakers({handleOpen, handleAddToCart, items, amount, in
   const [productImage, setProductImage] = useState(Product1)
   const [isActive, setIsActive] = useState(false) 
    
-  const handleClick = () => {
+  const handleClick = (id, items) => {
             
-    setIsActive (true)
-}
-
+        if (id === items.thumbnail[1].id) {
+            setIsActive (true)
+        } else 
+        {
+            setIsActive (false)
+            
+        }
+ }
+ 
   return (
         <div>
         {items.map(item => ( 
@@ -26,29 +32,29 @@ export default function Sneakers({handleOpen, handleAddToCart, items, amount, in
                     alt = 'Sneakers'>
                 </img>
               </div>
-                  <div className='thumbnail-img'>
+                  <div key={item.thumbnail[1].id} className='thumbnail-img'>
                       <ul>
                           <li className={isActive ? 'active thumbnail'  : 'thumbnail'} onClick = {() => handleClick()}>
                               <img
-                              src={item.thumbnail[0]} 
+                              src={item.thumbnail[0].thumbnail} 
                               alt = 'Thumbnail'
                               onClick={() => setProductImage(item.picture[0])}></img>
                           </li>
                           <li className={isActive ? 'active thumbnail'  : 'thumbnail'} onClick = {() => handleClick()} >
                               <img 
-                              src={item.thumbnail[1]} 
+                              src={item.thumbnail[1].thumbnail} 
                               alt = 'Thumbnail'
                               onClick={() => setProductImage(item.picture[1])}></img>
                           </li>
                           <li className={isActive ? 'active thumbnail'  : 'thumbnail'} onClick = {() => handleClick()} >
                               <img 
-                              src={item.thumbnail[2]} 
+                              src={item.thumbnail[2].thumbnail} 
                               alt = 'Thumbnail'
                               onClick={() => setProductImage(item.picture[2])}></img>
                           </li>
-                          <li className={isActive ? 'active thumbnail'  : 'thumbnail'} onClick = {() => handleClick()}>
+                          <li className={ isActive ? 'active thumbnail'  : 'thumbnail'} onClick = {() => handleClick()}>
                               <img 
-                              src={item.thumbnail[3]} 
+                              src={item.thumbnail[3].thumbnail} 
                               alt = 'Thumbnail'
                               onClick={() => setProductImage(item.picture[3])}></img>
                           </li>
@@ -68,7 +74,7 @@ export default function Sneakers({handleOpen, handleAddToCart, items, amount, in
         </div>
           </div>   
         ))}
-        </div>  
+    </div>  
   )
         
     }

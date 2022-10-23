@@ -54,3 +54,19 @@
 
   }
 
+  .cart span {
+
+    padding: 0 6px;
+    position: relative;
+    top: 2px;
+    border-radius: 5px;
+    color: #fff;
+    background: var(--primary-color); 
+    cursor: pointer;
+    
+  }
+
+  .navbar a.active {
+
+    border-bottom: 1px solid var(--primary-color);
+  }

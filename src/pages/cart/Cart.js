@@ -1,8 +1,16 @@
 import './Cart.css'
+import deleteIcon from '../../assets/icon-delete.svg'
 
 import React from 'react'
 
-export default function Cart({cart, setCart, amount}) {
+export default function Cart({cart, setCart, amount, handleAddToCart}) {
+
+  const handleRemove = (title) => {
+
+    const arr = cart.filter((item) => item.title !== title)
+    setCart(arr)
+    handleAddToCart()
+  }
 
   return (
     <div>
@@ -17,6 +25,7 @@ export default function Cart({cart, setCart, amount}) {
         ))}
       </div>
           <button className='btn'>Checkout</button>
+          <img onClick={handleRemove} src={deleteIcon} alt = 'delete'></img>
     </div>
   )
 }

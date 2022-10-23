@@ -33,13 +33,32 @@ function App() {
         price: 125,
         Detail:'Fall Limited Edition Sneakers. These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.',
         picture: [Product1, Product2, Product3,Product4],
-        thumbnail: [Thumbnail_1, Thumbnail_2, Thumbnail_3, Thumbnail_4] } 
+        thumbnail: [
+          {id: 1, thumbnail: Thumbnail_1}, 
+          {id: 2, thumbnail: Thumbnail_2}, 
+          {id: 3, thumbnail: Thumbnail_3},
+          {id: 4, thumbnail:  Thumbnail_4}
+        ] 
+    } 
 
   ])
 
   const [showModal, setShowModal] = useState(false)
   const [cart, setCart] = useState([])
   const [amount, setAmount] = useState(1) 
+  const [isActive, setIsActive] = useState(false) 
+
+  const handleClick = (id) => {
+            
+   if (id === items.thumbnail[''].id) {
+    setIsActive (true)
+   }
+   else {
+    setIsActive (false)
+   }
+    
+}
+
 
   const handleClose = () => {
         setShowModal(false)
@@ -65,18 +84,40 @@ function App() {
   setCart([...cart, items])
 
  }
-
- 
-   
+  
   return (
     <div className="App">
       
       <div className='container'>
       <BrowserRouter>
-       <NavBar />
+       <NavBar amount = {amount} />
         <Routes>
-        <Route path="/" element={ <Sneakers handleOpen = {handleOpen} handleAddToCart = {handleAddToCart} items = {items} amount = {amount} increase = {increase} decrease = {decrease} />} />
-        <Route path="/cart" element={ <Cart cart = {cart} setCart = {setCart} amount= {amount} />} />
+        <Route exact path="sneakers" 
+          element={ <Sneakers handleOpen = {handleOpen} 
+          handleAddToCart = {handleAddToCart} 
+          items = {items} 
+          amount = {amount}
+          handleClick = {handleClick} 
+          increase = {increase} 
+          decrease = {decrease} />} />
+        <Route path="/cart" 
+          element={ <Cart cart = {cart} 
+          setCart = {setCart} 
+          amount= {amount} 
+          handleAddToCart = {handleAddToCart} />} />
+
+        <Route exact path="sneakers" 
+          element={ <Sneakers handleOpen = {handleOpen} 
+          handleAddToCart = {handleAddToCart} 
+          items = {items} 
+          amount = {amount} 
+          increase = {increase} 
+          decrease = {decrease} />} />
+        <Route path="/cart" 
+          element={ <Cart cart = {cart} 
+          setCart = {setCart} 
+          amount= {amount} 
+          handleAddToCart = {handleAddToCart} />} />
         <Route path="/men" element={ <Men />} />
         <Route path="/women" element={ <Women />} />
         <Route path="/collections" element={ <Collections />} />
