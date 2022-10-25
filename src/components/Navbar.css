@@ -68,5 +68,7 @@
 
   .navbar a.active {
 
-    border-bottom: 1px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 52px ;
+    
   }

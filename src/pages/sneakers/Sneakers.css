@@ -30,6 +30,7 @@
 
     width: 100%;
     height: 100%;
+    cursor: pointer;
 }
 
 h4 {
@@ -56,9 +57,11 @@ h4 {
     margin: 0 auto;
     align-items: center;
     justify-content: flex-start;
+    cursor: pointer;
     
   }
 
-  .active {
+  .activee {
     border: 2px solid var(--primary-color);
+    opacity: 50%;
   }

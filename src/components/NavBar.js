@@ -6,13 +6,11 @@ import './Navbar.css'
 
 import React from 'react'
 
-export default function NavBar(amount) {
+export default function NavBar({amount, openCart,}) {
 
-  let activeStyle = {
-    textDecoration: "underline",
+  let activeStyle = { 
+   
   };
-
-  let activeClassName = "underline";
 
   return (
     <div>
@@ -41,15 +39,14 @@ export default function NavBar(amount) {
             }>About</NavLink> </li>
        </div>
         <li className='cart'>
-        <span>1</span> <NavLink to = 'cart' style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }><img src ={Cart} alt = 'Cart'></img></NavLink>
+        <span>1</span> <img onClick={openCart}  
+         src ={Cart} alt = 'Cart'></img>
         </li>
        <li className='avatar'>
         <img src={Avatar} alt = 'Avatar'></img>
        </li>
         <li>
-          <button className="btn">Logout</button>
+          <button  className="btn">Logout</button>
         </li>        
       </ul>
     </nav>

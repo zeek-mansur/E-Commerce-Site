@@ -1,6 +1,7 @@
 .header {
 
     border-bottom: 2px solid black;
+    
 }
 
 .sneakers {
@@ -11,3 +12,115 @@
     border-radius: 5%;
     overflow: hidden;
 }
+
+.cartmodal-backdrop {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 30%;
+    height: max-content;
+    background: rgb(244, 242, 242);
+    border-radius: 3%;
+  }
+
+
+  .cartmodal-image {
+
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    overflow: hidden;
+}
+  
+
+  .cart-modal {
+    padding: 20px;
+    max-width: 100%;
+    margin: 15px auto;
+    background: transparent;
+    border-radius: 20px;
+
+  }
+
+  .cart-modal img {
+
+    width: 100%;
+    height: 100%;
+}
+
+.cartmodal-backdrop img {
+
+    color: white;
+  }
+
+  .cart-container {
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .cartmodal-backdrop button {
+
+    width: 100%;
+  }
+
+  .details {
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cart-icon {
+
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 0%;
+    overflow: hidden;
+    background: rgb(244, 242, 242);
+    align-items: center;
+    justify-items: flex-start;
+
+  }
+
+  .cart-icon img {
+    width: 20%;
+    height: 25%;
+    cursor: pointer;
+
+
+  }
+
+  .cart-sneakers {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5%;
+    overflow: hidden;
+  }
+
+  .details img {
+
+    width: 80px;
+    height: 80px;
+  }
+
+  .items {
+
+    color: grey;
+    font-size: small;
+  }
+
+  .items span {
+
+    color: black;
+    font-weight: 500;
+  }
+
+  
+
+
+ 
+ 

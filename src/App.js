@@ -1,5 +1,5 @@
 // react libries 
-import { BrowserRouter, Link, Navigate, Route, Routes  } from 'react-router-dom'
+import { BrowserRouter, Route, Routes  } from 'react-router-dom'
 import React, { useState } from 'react'
 // styles
 import './App.css';
@@ -29,7 +29,7 @@ function App() {
 
   const [items] = useState([
     {   Name: 'Sneakers Company',
-        title: 'Fall Edition Sneakers', 
+        title: 'Fall Limited Edition Sneakers', 
         price: 125,
         Detail:'Fall Limited Edition Sneakers. These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.',
         picture: [Product1, Product2, Product3,Product4],
@@ -44,21 +44,9 @@ function App() {
   ])
 
   const [showModal, setShowModal] = useState(false)
+  const [showCartModal, setShowCartModal] = useState(false)
   const [cart, setCart] = useState([])
   const [amount, setAmount] = useState(1) 
-  const [isActive, setIsActive] = useState(false) 
-
-  const handleClick = (id) => {
-            
-   if (id === items.thumbnail[''].id) {
-    setIsActive (true)
-   }
-   else {
-    setIsActive (false)
-   }
-    
-}
-
 
   const handleClose = () => {
         setShowModal(false)
@@ -66,7 +54,15 @@ function App() {
    
   const handleOpen = ()  =>  {
     setShowModal(true)
-  }  
+  } 
+  
+  const closeCart = () => {
+    setShowCartModal(false)
+}
+
+const openCart = ()  =>  {
+setShowCartModal(true)
+}  
   
    const increase = () => {
     setAmount(count => count + 1)
@@ -90,22 +86,15 @@ function App() {
       
       <div className='container'>
       <BrowserRouter>
-       <NavBar amount = {amount} />
+       <NavBar amount = {amount} openCart = {openCart}/>
         <Routes>
         <Route exact path="sneakers" 
           element={ <Sneakers handleOpen = {handleOpen} 
           handleAddToCart = {handleAddToCart} 
           items = {items} 
           amount = {amount}
-          handleClick = {handleClick} 
           increase = {increase} 
           decrease = {decrease} />} />
-        <Route path="/cart" 
-          element={ <Cart cart = {cart} 
-          setCart = {setCart} 
-          amount= {amount} 
-          handleAddToCart = {handleAddToCart} />} />
-
         <Route exact path="sneakers" 
           element={ <Sneakers handleOpen = {handleOpen} 
           handleAddToCart = {handleAddToCart} 
@@ -113,17 +102,17 @@ function App() {
           amount = {amount} 
           increase = {increase} 
           decrease = {decrease} />} />
-        <Route path="/cart" 
-          element={ <Cart cart = {cart} 
-          setCart = {setCart} 
-          amount= {amount} 
-          handleAddToCart = {handleAddToCart} />} />
         <Route path="/men" element={ <Men />} />
         <Route path="/women" element={ <Women />} />
         <Route path="/collections" element={ <Collections />} />
         <Route path="/about" element={ <About />} />
         </Routes>
         {showModal && <Modal handleClose = {handleClose}/>}
+        {showCartModal && <Cart cart = {cart} 
+        closeCart = {closeCart}
+         setCart = {setCart} 
+         amount= {amount} 
+         handleAddToCart = {handleAddToCart} />}
         </BrowserRouter>
       </div>
     </div>
