@@ -47,6 +47,25 @@ function App() {
   const [showCartModal, setShowCartModal] = useState(false)
   const [cart, setCart] = useState([])
   const [amount, setAmount] = useState(1) 
+  const [productImage, setProductImage] = useState(Product1)
+
+  const handleClick = (event) => {
+ 
+    const thumbnailContainers = document.querySelectorAll('.thumbnails')
+    thumbnailContainers.forEach(container => {
+      container.classList.remove('activee')
+    })
+ 
+    setProductImage(items[parseInt(event.target.dataset.itemid)].picture[parseInt(event.target.id)])
+    event.target.parentElement.classList.add('activee')
+    setActiveImage(event)
+  }
+ 
+  const setActiveImage = (event) => {
+    const imageId = event.target.id
+    return imageId
+ 
+  }
 
   const handleClose = () => {
         setShowModal(false)
@@ -92,22 +111,22 @@ setShowCartModal(true)
           element={ <Sneakers handleOpen = {handleOpen} 
           handleAddToCart = {handleAddToCart} 
           items = {items} 
-          amount = {amount}
-          increase = {increase} 
-          decrease = {decrease} />} />
-        <Route exact path="sneakers" 
-          element={ <Sneakers handleOpen = {handleOpen} 
-          handleAddToCart = {handleAddToCart} 
-          items = {items} 
           amount = {amount} 
           increase = {increase} 
-          decrease = {decrease} />} />
+          decrease = {decrease}
+          handleClick = {handleClick}
+          productImage = {productImage} />} />
         <Route path="/men" element={ <Men />} />
         <Route path="/women" element={ <Women />} />
         <Route path="/collections" element={ <Collections />} />
         <Route path="/about" element={ <About />} />
         </Routes>
-        {showModal && <Modal handleClose = {handleClose}/>}
+        {showModal && <Modal 
+        handleClose = {handleClose}
+        items={items}
+        handleClick = {handleClick}
+        handleOpen = {handleOpen}
+        productImage = {productImage}/>}
         {showCartModal && <Cart cart = {cart} 
         closeCart = {closeCart}
          setCart = {setCart} 

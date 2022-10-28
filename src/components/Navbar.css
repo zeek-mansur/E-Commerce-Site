@@ -40,6 +40,12 @@
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.avatar:hover {
+  
+  border: 2px solid var(--primary-color);
 }
 
 .avatar img {

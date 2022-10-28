@@ -13,9 +13,10 @@ export default function Cart({cart, setCart, amount, handleAddToCart, closeCart}
   }
 
   return (
-    <div className='cartmodal-backdrop'>
+    <div className='cartmodal-backdrop'>     
       <div className='cart-modal'>
-      <span className='header'> Cart </span>
+      <div className='header'> Cart </div>
+      <div className='border'></div>
      <div className='cart-container'>
      <div>
         {cart.map(item => (

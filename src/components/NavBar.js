@@ -19,15 +19,12 @@ export default function NavBar({amount, openCart,}) {
       <li className="logo">
         <span>sneakers</span>
         </li>
-        <li className="logo">
+       <div className='nav-links'>
+       <li>
          <NavLink exact to = 'sneakers' style={({ isActive }) =>
               isActive ? activeStyle : undefined
-            }><span>sneakers</span></NavLink>
+            }>Collections</NavLink>
         </li>
-       <div className='nav-links'>
-       <li><NavLink to = 'collections' style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }>Collections</NavLink></li>
         <li><NavLink to = 'men' style={({ isActive }) =>
               isActive ? activeStyle : undefined
             }>Men</NavLink></li>

@@ -1,30 +1,7 @@
-import Product1 from '../../assets/image-product-1.jpg'
- 
+// styles
 import './Sneakers.css'
  
-import { useState } from "react"
- 
-export default function Sneakers({ handleOpen, handleAddToCart, items, amount, increase, decrease }) {
- 
-  const [productImage, setProductImage] = useState(Product1)
- 
-  const handleClick = (event) => {
- 
-    const thumbnailContainers = document.querySelectorAll('.thumbnail')
-    thumbnailContainers.forEach(container => {
-      container.classList.remove('activee')
-    })
- 
-    setProductImage(items[parseInt(event.target.dataset.itemid)].picture[parseInt(event.target.id)])
-    event.target.parentElement.classList.add('activee')
-    setActiveImage(event)
-  }
- 
-  const setActiveImage = (event) => {
-    const imageId = event.target.id
-    return imageId
- 
-  }
+export default function Sneakers({ handleOpen, handleAddToCart, items, amount, increase, decrease, handleClick, productImage }) {
  
   return (
     <div>
