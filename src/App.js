@@ -43,15 +43,18 @@ function App() {
 
   ])
 
+  const picture = [Product1, Product2, Product3,Product4]
+  
   const [showModal, setShowModal] = useState(false)
   const [showCartModal, setShowCartModal] = useState(false)
   const [cart, setCart] = useState([])
   const [amount, setAmount] = useState(1) 
   const [productImage, setProductImage] = useState(Product1)
+  
 
   const handleClick = (event) => {
  
-    const thumbnailContainers = document.querySelectorAll('.thumbnails')
+    const thumbnailContainers = document.querySelectorAll('.thumbnail')
     thumbnailContainers.forEach(container => {
       container.classList.remove('activee')
     })
@@ -95,7 +98,7 @@ setShowCartModal(true)
  }
 
  const handleAddToCart = (items) => {
-
+  if (cart.indexOf(items) !== -1) return
   setCart([...cart, items])
 
  }
@@ -105,7 +108,7 @@ setShowCartModal(true)
       
       <div className='container'>
       <BrowserRouter>
-       <NavBar amount = {amount} openCart = {openCart}/>
+       <NavBar amount = {amount} openCart = {openCart} closeCart = {closeCart}/>
         <Routes>
         <Route exact path="sneakers" 
           element={ <Sneakers handleOpen = {handleOpen} 
@@ -126,9 +129,10 @@ setShowCartModal(true)
         items={items}
         handleClick = {handleClick}
         handleOpen = {handleOpen}
-        productImage = {productImage}/>}
+        productImage = {productImage}
+        picture = {picture}/>}
         {showCartModal && <Cart cart = {cart} 
-        closeCart = {closeCart}
+         closeCart = {closeCart}
          setCart = {setCart} 
          amount= {amount} 
          handleAddToCart = {handleAddToCart} />}

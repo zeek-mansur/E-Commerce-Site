@@ -6,7 +6,7 @@ import './Navbar.css'
 
 import React from 'react'
 
-export default function NavBar({amount, openCart,}) {
+export default function NavBar({amount, openCart, closeCart}) {
 
   let activeStyle = { 
    
@@ -36,7 +36,7 @@ export default function NavBar({amount, openCart,}) {
             }>About</NavLink> </li>
        </div>
         <li className='cart'>
-        <span>1</span> <img onClick={openCart}  
+        <span onClick={closeCart}>1</span> <img onClick={openCart}  
          src ={Cart} alt = 'Cart'></img>
         </li>
        <li className='avatar'>

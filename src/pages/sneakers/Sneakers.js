@@ -1,8 +1,11 @@
 // styles
 import './Sneakers.css'
+
+// cart image 
+import Cart from '../../assets/icon-cart.svg'
  
 export default function Sneakers({ handleOpen, handleAddToCart, items, amount, increase, decrease, handleClick, productImage }) {
- 
+  console.log(Cart);
   return (
     <div>
       {items.map((item, index) => (
@@ -38,12 +41,16 @@ export default function Sneakers({ handleOpen, handleAddToCart, items, amount, i
             <h4>{item.Name}</h4>
             <h1>{item.title}</h1>
             <p>{item.Detail}</p>
-            <p>£{item.price}</p>
+            <p>${item.price}</p>
             <p>50%</p>
+            <div className='button-area'>
+            <div className='buttons'>
             <button className='cart-item-remove' onClick={decrease}>-</button>
             <span>{amount}</span>
             <button className='cart-item-add' onClick={increase}>+</button>
-            <button className='btn' onClick={() => handleAddToCart(item)}>Add to Cart</button>
+            </div>
+            <button className='cart-btn' onClick={() => handleAddToCart(item)}> <img className='cart-img' src={Cart} alt = 'cart'></img> Add to cart</button>
+            </div>
           </div>
         </div>
       ))}
