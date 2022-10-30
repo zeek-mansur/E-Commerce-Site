@@ -64,12 +64,19 @@
 
     padding: 0 6px;
     position: relative;
-    top: 2px;
+    top: 6px;
     border-radius: 5px;
     color: #fff;
     background: var(--primary-color); 
     cursor: pointer;
+    font-size: 8px;
+    left: 8px;
     
+  }
+
+  .cart {
+
+    position: static;
   }
 
   .navbar a.active {

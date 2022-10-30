@@ -6,7 +6,7 @@ import './Navbar.css'
 
 import React from 'react'
 
-export default function NavBar({amount, openCart, closeCart}) {
+export default function NavBar({amount, openCart, closeCart, cart}) {
 
   let activeStyle = { 
    
@@ -34,9 +34,12 @@ export default function NavBar({amount, openCart, closeCart}) {
         <li><NavLink to = 'about' style={({ isActive }) =>
               isActive ? activeStyle : undefined
             }>About</NavLink> </li>
+        <li><NavLink to = 'contanct' style={({ isActive }) =>
+              isActive ? activeStyle : undefined
+            }>Contact</NavLink> </li>
        </div>
         <li className='cart'>
-        <span onClick={closeCart}>1</span> <img onClick={openCart}  
+        {cart.length === 1 && <span onClick={closeCart}>{amount}</span>} <img onClick={openCart}  
          src ={Cart} alt = 'Cart'></img>
         </li>
        <li className='avatar'>

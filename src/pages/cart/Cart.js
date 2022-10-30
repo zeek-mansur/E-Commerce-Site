@@ -1,16 +1,26 @@
 import './Cart.css'
 import deleteIcon from '../../assets/icon-delete.svg'
 
-import React from 'react'
-
-export default function Cart({cart, setCart, amount, handleAddToCart, closeCart}) {
+export default function Cart({cart, setCart, amount, handleAddToCart, closeCart, items}) {
 
   const handleRemove = (title) => {
 
-    const arr = cart.filter((item) => item.title !== title)
-    setCart(arr)
-    handleAddToCart()
+    setCart((prevCart) => {
+     return prevCart.filter((cart) => {
+      return title !== cart.title
+    })
+  })
+  handleAddToCart()
   }
+
+  // const handleRemove = (title) => {
+
+  //   const arr = cart.filter((item) => item.title !== title)
+  //   setCart(arr)
+  //   handleAddToCart()
+
+  // }
+
 
   return (
     <div className='cartmodal-backdrop'>     
@@ -18,6 +28,7 @@ export default function Cart({cart, setCart, amount, handleAddToCart, closeCart}
       <div className='header'> Cart </div>
       <div className='border'></div>
      <div className='cart-container'>
+      {cart.length === 0 && <p className='cart-message'>Your cart is empty</p>}
      <div>
         {cart.map(item => (
           <div className='details' key={item.title}>
@@ -25,11 +36,11 @@ export default function Cart({cart, setCart, amount, handleAddToCart, closeCart}
             <div className='items'><p>{item.title}</p>
             <p>${item.price} x {amount} <span>${item.price * amount}</span></p></div>
           </div>
-        ))}      
-      </div>        
-          <div className='cart-icon'><img onClick={handleRemove} src={deleteIcon} alt = 'delete'></img></div>
+        ))}         
+      </div>      
+          {cart.length === 1 && <div className='cart-icon'><img onClick={()=>handleRemove(cart.title)} src={deleteIcon} alt = 'delete'></img></div>}
      </div>
-          <button className='btn'>Checkout</button>
+         {cart.length === 1 && <button className='btn'>Checkout</button>}
       </div>
     </div>
   )

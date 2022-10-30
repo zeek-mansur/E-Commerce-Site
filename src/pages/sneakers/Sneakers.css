@@ -22,7 +22,8 @@
 
 .product-info {
     width: 60%;
-    margin-right: 2%;
+    margin-right: 15%;
+    margin-left: 10%;
 }
 
 
@@ -35,6 +36,7 @@
 
 h4 {
     color: var(--primary-color);
+    font-weight: 400;
 }
 
 .thumbnail {
@@ -75,11 +77,12 @@ h4 {
 
     display: flex;
     justify-content: flex-start;
-    margin-right: 5px;  
+    margin-right: 5px; 
+    margin-top: 30px; 
   }
 
   .button-area button {
-    width: 40%; 
+    width: 60%; 
   }
 
    .cart-item-add, .button-area.btn  {
@@ -87,7 +90,7 @@ h4 {
   }
     
   .buttons {
-    width: 25%;
+    width: 35%;
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 8px;
 
@@ -139,5 +142,38 @@ h4 {
   .cart-btn:hover {
     color: #fff;
     background-color: var(--primary-color);
+  }
+
+  .price {
+
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+
+  .main-price {
+
+    opacity: 0.3;
+    margin-top: -10px;
+    font-size: small;
+    text-decoration: line-through;
+  }
+
+  .item-price {
+
+    font-size: larger;
+    font-weight: 600;
+  }
+
+  .item-discount {
+
+    background-color: #f6dfcf;
+    color: var(--primary-color);
+    border-radius: 6px;
+    width: 50px;
+    font-size: small;
+    text-align: center;
+    line-height: 30px;
+
   }
   
