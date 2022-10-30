@@ -23,6 +23,7 @@ import Thumbnail_1 from './assets/image-product-1-thumbnail.jpg'
 import Thumbnail_2 from './assets/image-product-2-thumbnail.jpg'
 import Thumbnail_3 from './assets/image-product-3-thumbnail.jpg'
 import Thumbnail_4 from './assets/image-product-4-thumbnail.jpg'
+import Contact from './pages/contact/Contact';
 
 
 function App() {
@@ -127,6 +128,7 @@ setShowCartModal(true)
         <Route path="/women" element={ <Women />} />
         <Route path="/collections" element={ <Collections />} />
         <Route path="/about" element={ <About />} />
+        <Route path="/contact" element = {<Contact />} />
         </Routes>
         {showModal && <Modal 
         handleClose = {handleClose}

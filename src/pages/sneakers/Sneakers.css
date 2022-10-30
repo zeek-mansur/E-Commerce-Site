@@ -176,4 +176,106 @@ h4 {
     line-height: 30px;
 
   }
+
+  @media (max-width: 768px) {
+
+    .sneakers-page {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .products {
+
+      width: 100%;
+      margin-left: 0%;
+      top: 0;
+  }
+
+  .sneakers {
+
+    display: inline-block;
+    width: 80%;
+    height: 350px;
+    border-radius: 5% ;
+    overflow: hidden;
+}
+
+.product-info {
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  top: 0;
+  
+}
+
+  }
+
+  @media (max-width: 390px) {
+
+    .sneakers-page {
+      display: flex;
+      flex-direction: column;
+    }
+      .products {
+
+        width: 100%;
+        margin-left: 0%;
+        top: 0;
+    }
+
+    .sneakers {
+
+      display: inline-block;
+      width: 100%;
+      height: 350px;
+      border-radius: 0% ;
+      overflow: hidden;
+  }
+
+    .product-info {
+      width: 90%;
+      margin-right: 5%;
+      margin-left: 5%;
+      top: 0;
+      
+  }
+
+  .button-area {
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-right: 5px; 
+    margin-top: 30px; 
+  }
+
+  .cart-btn {
+    width: 100%;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .button-area button, .button-area .buttons {
+
+    width: 100%;
+  }
+
+  .thumbnail-img {
+
+    visibility: hidden;
+  }
+
+  .price-area {
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main-price {
+
+    margin-top: 13px;
+    
+  }
+
+  }
   

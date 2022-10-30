@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 
 import React from 'react'
+import Burger from './Burger'
 
 export default function NavBar({amount, openCart, closeCart, cart}) {
 
@@ -19,25 +20,7 @@ export default function NavBar({amount, openCart, closeCart, cart}) {
       <li className="logo">
         <span>sneakers</span>
         </li>
-       <div className='nav-links'>
-       <li>
-         <NavLink exact to = 'sneakers' style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }>Collections</NavLink>
-        </li>
-        <li><NavLink to = 'men' style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }>Men</NavLink></li>
-        <li><NavLink to = 'women' style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }>Women</NavLink> </li>
-        <li><NavLink to = 'about' style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }>About</NavLink> </li>
-        <li><NavLink to = 'contanct' style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }>Contact</NavLink> </li>
-       </div>
+        <Burger activeStyle = {activeStyle} />
         <li className='cart'>
         {cart.length === 1 && <span onClick={closeCart}>{amount}</span>} <img onClick={openCart}  
          src ={Cart} alt = 'Cart'></img>

@@ -1,6 +1,6 @@
 // styles
 
-import '.Contact.css'
+import './Contact.css'
 
 import React from 'react'
 

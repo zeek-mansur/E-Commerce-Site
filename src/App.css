@@ -1,10 +1,22 @@
 .App {
   display: flex;
+
 }
 
 .App .container {
 
   flex-grow: 1;
   padding: 0 80px;
+  
 
+}
+
+@media (max-width: 390px) {
+
+  .App .container {
+
+    flex-grow: 1;
+    padding: 0 0px;
+  
+  }
 }
