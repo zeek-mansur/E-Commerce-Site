@@ -1,6 +1,6 @@
 import Avatar from '../assets/image-avatar.png'
 import Cart from '../assets/icon-cart.svg'
-import { NavLink } from 'react-router-dom'
+
 // styles 
 import './Navbar.css'
 
