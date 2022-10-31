@@ -19,4 +19,18 @@
     padding: 0 0px;
   
   }
+
+  p {
+      font-size: small;
+  }
+
+  h1 {
+
+    font-size: larger;
+
+  }
+
+  h4 {
+    font-size: medium;
+  }
 }

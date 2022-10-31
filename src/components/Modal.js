@@ -4,12 +4,18 @@ import prevIcon from '../assets/icon-previous.svg'
 // styles 
 import './Modal.css'
 
-export default function Modal({handleClose, items, productImage, picture}) {
+export default function Modal({handleClose, items, productImage}) {
 
     const [currentIndex, setCurrentIndex] = useState(0)
 
-    const handleClick = (event) => {
+    const goToPicture = (pictureIndex) => {
+     
+      setCurrentIndex(pictureIndex)
+    }
  
+
+    const handleClick = (event) => {
+
         const thumbnailContainers = document.querySelectorAll('.thumbnails')
         thumbnailContainers.forEach(container => {
           container.classList.remove('activee')
@@ -18,6 +24,7 @@ export default function Modal({handleClose, items, productImage, picture}) {
         setCurrentIndex(items[parseInt(event.target.dataset.itemid)].picture[parseInt(event.target.id)])
         event.target.parentElement.classList.add('activee')
         setActiveImage(event)
+        goToPicture(parseInt(event.target.id))
       }
      
       const setActiveImage = (event) => {
@@ -25,17 +32,18 @@ export default function Modal({handleClose, items, productImage, picture}) {
         return imageId
     }
     
-
+    const pictureLength = items[0].picture.length
+    
     const goToPrevious = ()  => {
 
         const isFirstPicture = currentIndex === 0
-        const newIndex = isFirstPicture ? picture.length -1 : currentIndex - 1
+        const newIndex = isFirstPicture ? pictureLength - 1 : currentIndex - 1
         setCurrentIndex(newIndex)
     }
 
     const goToNext = ()  => {
-
-        const isLastPicture = currentIndex === picture.length -1
+     
+        const isLastPicture = currentIndex === pictureLength -1
         const newIndex = isLastPicture ? 0 : currentIndex + 1
         setCurrentIndex(newIndex)
     }
@@ -45,18 +53,16 @@ export default function Modal({handleClose, items, productImage, picture}) {
     <div className='modal-backdrop'> 
         <div className='modal'>
                 <p className='close-icon' onClick={handleClose}>x</p>
-                <button onClick={goToPrevious} ></button>
-                <button onClick={goToNext} ></button>
                 <div className='icons-container'>
-                    <div className='icons'>
-                    <img onClick={goToPrevious} src = {prevIcon} alt = 'Previous'></img>
+                    <div  className='icons'>
+                    <img onClick={() => goToPrevious()} src = {prevIcon} alt = 'Previous'></img>
                     </div>
                      <div className='icons'>
-                        <img onClick={goToNext} src = {nextIcon} alt = 'Next'></img>
+                        <img onClick={()=>goToNext()} src = {nextIcon} alt = 'Next'></img>
                     </div>
                 </div>                  
                 <div>
-      {items.map((item, index) => (
+      {items.map((item, index ) => (
         <div key={item.title}>
             <div className='modal-image'>
               <img
@@ -67,11 +73,11 @@ export default function Modal({handleClose, items, productImage, picture}) {
             <div className='thumbnails-img'>
               <ul>
                 {
-                  item.thumbnail.map((thumb, id) => {
+                  item.thumbnail.map((thumb, thumbIndex) => {
                     return (
                       <li key={thumb.id} className={'thumbnails'} >
                       <img
-                        id={id}
+                        id={thumbIndex}
                         data-itemid={index}
                         src={thumb.thumbnail}
                         alt='Thumbnail'

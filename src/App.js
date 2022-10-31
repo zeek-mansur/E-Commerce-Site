@@ -44,7 +44,6 @@ function App() {
 
   ])
 
-  const picture = [Product1, Product2, Product3,Product4]
   
   const [showModal, setShowModal] = useState(false)
   const [showCartModal, setShowCartModal] = useState(false)
@@ -136,7 +135,7 @@ setShowCartModal(true)
         handleClick = {handleClick}
         handleOpen = {handleOpen}
         productImage = {productImage}
-        picture = {picture}/>}
+        />}
         {showCartModal && <Cart cart = {cart} 
          closeCart = {closeCart}
          setCart = {setCart} 

@@ -261,8 +261,8 @@ h4 {
   }
 
   .thumbnail-img {
-
-    visibility: hidden;
+    
+    display: none;
   }
 
   .price-area {
