@@ -1,35 +1,36 @@
 import Avatar from '../assets/image-avatar.png'
 import Cart from '../assets/icon-cart.svg'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 // styles 
 import './Navbar.css'
 
 import React from 'react'
+import Burger from './Burger'
 
-export default function NavBar() {
+export default function NavBar({amount, openCart, closeCart, cart}) {
+
+  let activeStyle = { 
+   
+  };
+
   return (
     <div>
       <nav className="navbar">
       <ul>
-        <li className="logo">
-         <Link to = '/'><span>sneakers</span></Link>
+      <li className="logo">
+        <span>sneakers</span>
         </li>
-       <div className='nav-links'>
-       <li><Link to = './collections'>Collections</Link></li>
-        <li><Link to = './men'>Men</Link></li>
-        <li><Link to = './women'>Women</Link> </li>
-        <li><Link to = './about'>About</Link> </li>
-       </div>
-        <li>
-        <Link to = './cart'><img src ={Cart} alt = 'Cart'></img></Link> 
+        <Burger activeStyle = {activeStyle} />
+        <li className='cart'>
+        {cart.length === 1 && <span onClick={closeCart}>{amount}</span>} <img onClick={openCart}  
+         src ={Cart} alt = 'Cart'></img>
         </li>
        <li className='avatar'>
         <img src={Avatar} alt = 'Avatar'></img>
        </li>
         <li>
-          <button className="btn">Logout</button>
-        </li>
-        
+          <button  className="btn">Logout</button>
+        </li>        
       </ul>
     </nav>
     </div>

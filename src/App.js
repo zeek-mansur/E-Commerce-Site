@@ -1,5 +1,5 @@
 // react libries 
-import { BrowserRouter, Link, Navigate, Route, Routes  } from 'react-router-dom'
+import { BrowserRouter, Route, Routes  } from 'react-router-dom'
 import React, { useState } from 'react'
 // styles
 import './App.css';
@@ -23,23 +23,53 @@ import Thumbnail_1 from './assets/image-product-1-thumbnail.jpg'
 import Thumbnail_2 from './assets/image-product-2-thumbnail.jpg'
 import Thumbnail_3 from './assets/image-product-3-thumbnail.jpg'
 import Thumbnail_4 from './assets/image-product-4-thumbnail.jpg'
+import Contact from './pages/contact/Contact';
 
 
 function App() {
 
   const [items] = useState([
-    {   Name: 'Sneakers Company',
-        title: 'Fall Edition Sneakers', 
+    {   Name: 'SNEAKER COMPANY',
+        title: 'Fall Limited Edition Sneakers', 
         price: 125,
-        Detail:'Fall Limited Edition Sneakers. These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.',
+        Detail:'These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.',
         picture: [Product1, Product2, Product3,Product4],
-        thumbnail: [Thumbnail_1, Thumbnail_2, Thumbnail_3, Thumbnail_4] } 
+        thumbnail: [
+          {id: 1, thumbnail: Thumbnail_1}, 
+          {id: 2, thumbnail: Thumbnail_2}, 
+          {id: 3, thumbnail: Thumbnail_3},
+          {id: 4, thumbnail:  Thumbnail_4}
+        ] 
+    } 
 
   ])
 
+  const picture = [Product1, Product2, Product3,Product4]
+  
   const [showModal, setShowModal] = useState(false)
+  const [showCartModal, setShowCartModal] = useState(false)
   const [cart, setCart] = useState([])
   const [amount, setAmount] = useState(1) 
+  const [productImage, setProductImage] = useState(Product1)
+  
+
+  const handleClick = (event) => {
+ 
+    const thumbnailContainers = document.querySelectorAll('.thumbnail')
+    thumbnailContainers.forEach(container => {
+      container.classList.remove('activee')
+    })
+ 
+    setProductImage(items[parseInt(event.target.dataset.itemid)].picture[parseInt(event.target.id)])
+    event.target.parentElement.classList.add('activee')
+    setActiveImage(event)
+  }
+ 
+  const setActiveImage = (event) => {
+    const imageId = event.target.id
+    return imageId
+ 
+  }
 
   const handleClose = () => {
         setShowModal(false)
@@ -47,7 +77,15 @@ function App() {
    
   const handleOpen = ()  =>  {
     setShowModal(true)
-  }  
+  } 
+  
+  const closeCart = () => {
+    setShowCartModal(false)
+}
+
+const openCart = ()  =>  {
+setShowCartModal(true)
+}  
   
    const increase = () => {
     setAmount(count => count + 1)
@@ -61,28 +99,50 @@ function App() {
  }
 
  const handleAddToCart = (items) => {
-
+  if (cart.indexOf(items) !== -1) return
   setCart([...cart, items])
 
  }
-
- 
-   
+  
   return (
     <div className="App">
       
       <div className='container'>
       <BrowserRouter>
-       <NavBar />
+       <NavBar 
+       amount = {amount} 
+       openCart = {openCart} 
+       closeCart = {closeCart}
+        cart = {cart}/>
         <Routes>
-        <Route path="/" element={ <Sneakers handleOpen = {handleOpen} handleAddToCart = {handleAddToCart} items = {items} amount = {amount} increase = {increase} decrease = {decrease} />} />
-        <Route path="/cart" element={ <Cart cart = {cart} setCart = {setCart} amount= {amount} />} />
+        <Route exact path="sneakers" 
+          element={ <Sneakers handleOpen = {handleOpen} 
+          handleAddToCart = {handleAddToCart} 
+          items = {items} 
+          amount = {amount} 
+          increase = {increase} 
+          decrease = {decrease}
+          handleClick = {handleClick}
+          productImage = {productImage} />} />
         <Route path="/men" element={ <Men />} />
         <Route path="/women" element={ <Women />} />
         <Route path="/collections" element={ <Collections />} />
         <Route path="/about" element={ <About />} />
+        <Route path="/contact" element = {<Contact />} />
         </Routes>
-        {showModal && <Modal handleClose = {handleClose}/>}
+        {showModal && <Modal 
+        handleClose = {handleClose}
+        items={items}
+        handleClick = {handleClick}
+        handleOpen = {handleOpen}
+        productImage = {productImage}
+        picture = {picture}/>}
+        {showCartModal && <Cart cart = {cart} 
+         closeCart = {closeCart}
+         setCart = {setCart} 
+         amount= {amount} 
+         handleAddToCart = {handleAddToCart}
+         items = {items} />}
         </BrowserRouter>
       </div>
     </div>
