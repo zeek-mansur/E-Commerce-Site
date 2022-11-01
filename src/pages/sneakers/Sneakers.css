@@ -48,6 +48,11 @@ h4 {
     overflow: hidden;
 }
 
+.thumbnail:hover {
+
+  opacity: 0.5;
+}
+
 .thumbnail img {
 
     width: 100%;
@@ -261,7 +266,7 @@ h4 {
   }
 
   .thumbnail-img {
-    
+
     display: none;
   }
 
