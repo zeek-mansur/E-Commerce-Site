@@ -4,7 +4,7 @@ import prevIcon from '../assets/icon-previous.svg'
 // styles 
 import './Modal.css'
 
-export default function Modal({handleClose, items, productImage}) {
+export default function Modal({handleClose, items}) {
 
     const [currentIndex, setCurrentIndex] = useState(0)
 

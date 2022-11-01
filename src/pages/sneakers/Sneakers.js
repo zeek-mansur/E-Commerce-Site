@@ -54,7 +54,7 @@ export default function Sneakers({ handleOpen, handleAddToCart, items, amount, i
             <span>{amount}</span>
             <button className='cart-item-add' onClick={increase}>+</button>
             </div>
-            <button className='cart-btn' onClick={() => handleAddToCart(item)}> <img className='cart-img' src={Cart} alt = 'cart'></img> Add to cart</button>
+            <button className='cart-btn' onClick={() => handleAddToCart(item)}> <img className='cart-img' src={Cart} alt = 'cart'></img>Add to cart</button>
             </div>
           </div>
         </div>

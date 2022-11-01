@@ -38,27 +38,14 @@ const Ul = styled.ul`
 
 export default function LeftNav({open}) {
 
-    let activeStyle = {
-
-    }
   return (
     <div>
         <Ul className= 'nav-links' open = {open}>
-             <li className='collections'><NavLink exact to = 'sneakers' style={({ isActive }) =>
-                isActive ? activeStyle : undefined
-                }>Collections</NavLink></li>
-            <li><NavLink to = 'men' style={({ isActive }) =>
-                isActive ? activeStyle : undefined
-                }>Men</NavLink></li>
-            <li><NavLink to = 'women' style={({ isActive }) =>
-                isActive ? activeStyle : undefined
-                }>Women</NavLink> </li>
-            <li><NavLink to = 'about' style={({ isActive }) =>
-                isActive ? activeStyle : undefined
-                }>About</NavLink> </li>
-            <li><NavLink to = 'contact' style={({ isActive }) =>
-                isActive ? activeStyle : undefined
-                }>Contact</NavLink> </li>
+             <li className='collections'><NavLink exact to = 'sneakers' >Collections</NavLink></li>
+            <li><NavLink to = 'men' >Men</NavLink></li>
+            <li><NavLink to = 'women' >Women</NavLink> </li>
+            <li><NavLink to = 'about' >About</NavLink> </li>
+            <li><NavLink to = 'contact' >Contact</NavLink> </li>
         </Ul>
     </div>
   )

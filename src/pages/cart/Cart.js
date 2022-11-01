@@ -31,6 +31,7 @@ export default function Cart({cart, setCart, amount, handleAddToCart, closeCart,
   return (
     <div className='cartmodal-backdrop'>     
       <div className='cart-modal'>
+      <p onClick={closeCart} className='cart-close'>X</p>  
       <div className='header'> Cart </div>
       <div className='border'></div>
      <div className='cart-container'>
