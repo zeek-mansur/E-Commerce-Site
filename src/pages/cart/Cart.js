@@ -1,7 +1,7 @@
 import './Cart.css'
 import deleteIcon from '../../assets/icon-delete.svg'
 
-export default function Cart({cart, setCart, amount, handleAddToCart, closeCart, items}) {
+export default function Cart({cart, setCart, amount, handleAddToCart, closeCart}) {
 
   
   const refreshPage = () => {
@@ -19,14 +19,6 @@ export default function Cart({cart, setCart, amount, handleAddToCart, closeCart,
   closeCart()
   refreshPage()
   }
-
-  // const handleRemove = (title) => {
-
-  //   const arr = cart.filter((item) => item.title !== title)
-  //   setCart(arr)
-  //   handleAddToCart()
-
-  // }
 
   return (
     <div className='cartmodal-backdrop'>     

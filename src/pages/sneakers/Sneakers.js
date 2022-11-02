@@ -4,7 +4,7 @@ import './Sneakers.css'
 // cart image 
 import Cart from '../../assets/icon-cart.svg'
  
-export default function Sneakers({ handleOpen, handleAddToCart, items, amount, increase, decrease, handleClick, productImage }) {
+export default function Sneakers({ openModal, handleAddToCart, items, amount, increase, decrease, handleThumbnails, productImage }) {
 
   return (
     <div>
@@ -14,14 +14,14 @@ export default function Sneakers({ handleOpen, handleAddToCart, items, amount, i
             <div className='sneakers'>
               <img
                 src={productImage}
-                onClick={handleOpen}
+                onClick={openModal}
                 alt='Sneakers'>
               </img>
             </div>
             <div className='thumbnail-img'>
               <ul>
                 {
-                  item.thumbnail.map((thumb, id) => {
+                  item.thumbnails.map((thumb, id) => {
                     return (
                       <li key={thumb.id} className={'thumbnail'} >
                       <img
@@ -29,7 +29,7 @@ export default function Sneakers({ handleOpen, handleAddToCart, items, amount, i
                         data-itemid={index}
                         src={thumb.thumbnail}
                         alt='Thumbnail'
-                        onClick={(event) => handleClick(event)}></img>
+                        onClick={(event) => handleThumbnails(event)}></img>
                     </li>
                     )
                   })

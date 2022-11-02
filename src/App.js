@@ -33,8 +33,8 @@ function App() {
         title: 'Fall Limited Edition Sneakers', 
         price: 125,
         Detail:'These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.',
-        picture: [Product1, Product2, Product3,Product4],
-        thumbnail: [
+        pictures: [Product1, Product2, Product3,Product4],
+        thumbnails: [
           {id: 1, thumbnail: Thumbnail_1}, 
           {id: 2, thumbnail: Thumbnail_2}, 
           {id: 3, thumbnail: Thumbnail_3},
@@ -51,15 +51,14 @@ function App() {
   const [amount, setAmount] = useState(1) 
   const [productImage, setProductImage] = useState(Product1)
   
-
-  const handleClick = (event) => {
+  const handleThumbnails = (event) => {
  
     const thumbnailContainers = document.querySelectorAll('.thumbnail')
     thumbnailContainers.forEach(container => {
       container.classList.remove('activee')
     })
  
-    setProductImage(items[parseInt(event.target.dataset.itemid)].picture[parseInt(event.target.id)])
+    setProductImage(items[parseInt(event.target.dataset.itemid)].pictures[parseInt(event.target.id)])
     event.target.parentElement.classList.add('activee')
     setActiveImage(event)
   }
@@ -70,11 +69,11 @@ function App() {
  
   }
 
-  const handleClose = () => {
+  const closeModal = () => {
         setShowModal(false)
     }
    
-  const handleOpen = ()  =>  {
+  const openModal = ()  =>  {
     setShowModal(true)
   } 
   
@@ -115,13 +114,13 @@ setShowCartModal(true)
         cart = {cart}/>
         <Routes>
         <Route exact path="sneakers" 
-          element={ <Sneakers handleOpen = {handleOpen} 
+          element={ <Sneakers openModal = {openModal} 
           handleAddToCart = {handleAddToCart} 
           items = {items} 
           amount = {amount} 
           increase = {increase} 
           decrease = {decrease}
-          handleClick = {handleClick}
+          handleThumbnails = {handleThumbnails}
           productImage = {productImage} />} />
         <Route path="/men" element={ <Men />} />
         <Route path="/women" element={ <Women />} />
@@ -130,10 +129,9 @@ setShowCartModal(true)
         <Route path="/contact" element = {<Contact />} />
         </Routes>
         {showModal && <Modal 
-        handleClose = {handleClose}
+        closeModal = {closeModal}
         items={items}
-        handleClick = {handleClick}
-        handleOpen = {handleOpen}
+        openModal = {openModal}
         productImage = {productImage}
         />}
         {showCartModal && <Cart cart = {cart} 
