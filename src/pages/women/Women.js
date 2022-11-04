@@ -18,7 +18,7 @@ export default function Women() {
         <div key={item.title}>
           <img className='offer-img' src="https://via.placeholder.com/350x200" alt="product" />
           <h4>{item.title}</h4>
-          <p>£{item.price}</p>
+          <p>${item.price}</p>
         </div>
       ))}
     </div>

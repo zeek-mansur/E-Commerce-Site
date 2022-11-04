@@ -31,7 +31,7 @@ export default function Cart({cart, setCart, amount, handleAddToCart, closeCart}
      {cart.length === 1  && <div>
         {cart.map(item => (
            <div className='details' key={item.title}>
-            <img className='cart-sneakers' src={item.thumbnail[0].thumbnail} alt="product" />
+            <img className='cart-sneakers' src={item.thumbnails[0].thumbnail} alt="product" />
             <div className='items'><p>{item.title}</p>
             <p>${item.price} x {amount} <span>${item.price * amount}</span></p></div>
           </div>

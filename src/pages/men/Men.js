@@ -17,7 +17,7 @@ export default function Men() {
         <div key={item.title}>
           <img src="https://via.placeholder.com/350x200" alt="product" />
           <h4>{item.title}</h4>
-          <p>£{item.price}</p>
+          <p>${item.price}</p>
         </div>
       ))}
     </div>

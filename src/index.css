@@ -4,9 +4,9 @@
 :root {
   --heading-color: #444;
   --text-color: #999;
-  --primary-color: #de6f1b;
+  --primary-color: hsl(26, 100%, 55%);
   --highlight-color: #d13267;
-  --bg-color: #fff;
+  --bg-color: hsl(0, 0%, 100%);
 }
 /* base styles */
 body {
