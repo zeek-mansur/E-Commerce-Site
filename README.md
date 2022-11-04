@@ -50,7 +50,7 @@ Users should be able to:
 
 ### Problems faced
 
-- **Burger icon** - The burger icon wasn't expanding when clicked. The reason for this was the bootstrap cdn link which was not correct. I had to search on youtube for a tutorial in order to correct it to enable it work fine.
+- **Burger icon** - I had issues adding the hamburger icon to my react project. I had to search on youtube for a tutorial which guided me in adding it to my project.
 - **lightbox gallery** - I had issues with switching images in the gallery by clicking the previous and next buttons. Also I had problem positioning the previous and next icon on the modal image. However, this was solved by using z-index.
 - **Grids** - I initial had issues with my grids as the site breaks whenever I tried to change the sizes of the screen. I had to use media query for each screen size needed.
 - **Cart** - I had issues with deleting added items from the cart. When the delete icon in the cart is clicked the whole page becomes blank with errors. Page has to be refreshed to come back. I sloved the problem by adding a reload function to the delete function so it automatically refreshes the page when delete icon is clicked 
