@@ -173,7 +173,7 @@ h4 {
 
   .item-discount {
 
-    background-color: #f6dfcf;
+    background-color: var(--highlight-color);
     color: var(--primary-color);
     border-radius: 6px;
     width: 50px;

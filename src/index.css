@@ -2,10 +2,10 @@
 
 /* variables */
 :root {
-  --heading-color: #444;
+  --heading-color: hsl(26, 100%, 55%);
   --text-color: #999;
   --primary-color: hsl(26, 100%, 55%);
-  --highlight-color: #d13267;
+  --highlight-color: hsl(25, 100%, 94%);
   --bg-color: hsl(0, 0%, 100%);
 }
 /* base styles */

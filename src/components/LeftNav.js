@@ -9,7 +9,7 @@ const Ul = styled.ul`
   
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #fff;
+    background-color: hsl(25, 100%, 94%);
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
     top: 0;
@@ -21,7 +21,7 @@ const Ul = styled.ul`
 
     @media (max-width: 390px) {
         flex-flow: column nowrap;
-        background-color: #fff;
+        background-color: hsl(25, 100%, 94%);
         position: fixed;
         transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
         top: 0;
