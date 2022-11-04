@@ -9,7 +9,6 @@ This project is for educational purposes only.
   - [Links](#links)
 - [My process](#my-process)
   - [Technologies used](#technologies-used)
-  - [What I learned](#what-i-learned)
   - [Problems faced](#problems-faced)
   - [Features to Implement in the future](#features-to-implement-in-the-future)
   - [Useful resources](#useful-resources)
@@ -48,32 +47,6 @@ Users should be able to:
 - [**GitHub**](https://github.com/)
     - I've used **GitHub** as a remote repository to push and store the committed changes to my project from Git.
 - [**Firebase**](http://firebase.google.com/) - I've also used Firebase hosting to deploy my website in a live environment.
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: var(--primary-color);
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Problems faced
 
