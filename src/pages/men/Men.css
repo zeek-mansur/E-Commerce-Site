@@ -1,0 +1,16 @@
+.offers {
+
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    justify-content: space-between;
+}
+
+@media (max-width: 390px) {
+
+    .offers {
+
+        flex-direction: column;
+    }
+}

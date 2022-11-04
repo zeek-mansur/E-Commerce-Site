@@ -1,6 +1,6 @@
 import Avatar from '../assets/image-avatar.png'
 import Cart from '../assets/icon-cart.svg'
-import { NavLink } from 'react-router-dom'
+
 // styles 
 import './Navbar.css'
 
@@ -27,10 +27,7 @@ export default function NavBar({amount, openCart, closeCart, cart}) {
         </li>
        <li className='avatar'>
         <img src={Avatar} alt = 'Avatar'></img>
-       </li>
-        <li>
-          <button  className="btn">Logout</button>
-        </li>        
+       </li>      
       </ul>
     </nav>
     </div>

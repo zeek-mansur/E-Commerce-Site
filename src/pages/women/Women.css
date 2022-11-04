@@ -1,0 +1,15 @@
+@media (max-width: 390px) {
+
+    .offers img {
+
+        width: 240px;
+        height: 120px;
+    }
+
+    .offers {
+
+        margin-left: 20px;
+    }
+
+  
+}

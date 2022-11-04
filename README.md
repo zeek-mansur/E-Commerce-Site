@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Milestone Project Three - E-commerce product page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is for educational purposes only.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Technologies used](#technologies-used)
+  - [Problems faced](#problems-faced)
+  - [Features to Implement in the future](#features-to-implement-in-the-future)
+  - [Useful resources](#useful-resources)
+  - [Deployment](#deployment)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Open a lightbox gallery by clicking on the large product image
+- Switch the large product image by clicking on the small thumbnail images
+- Add items to the cart
+- View the cart and remove items from it
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Links
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Live Site URL: [EcommerceSite](https://ecommercesite-80fcc.web.app/sneakers)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## My process
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Technologies Used
 
-### `npm run eject`
+- [**CSS3**] - CSS3 was used for the styling of the elements and content of the project
+- [**Flexbox**] - Flexbox was used for making the pages responsive.
+- [**React**](https://reactjs.org/) - This project was built in React JS library.
+- [**ReactRouter**](https://reactrouter.com/) - React router version 6 was used for routing the pages.
+- [**StyledComponents**](https://styled-components.com/) - I have used styled component for creating my hambuger icon and the side bar page.
+- [**Git**](https://git-scm.com/) - I've used **Git** as a version control system to regularly add and commit changes made to project in Cloud9, before pushing them to GitHub.
+- [**GitHub**](https://github.com/)
+    - I've used **GitHub** as a remote repository to push and store the committed changes to my project from Git.
+- [**Firebase**](http://firebase.google.com/) - I've also used Firebase hosting to deploy my website in a live environment.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Problems faced
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Burger icon** - I had issues adding the hamburger icon to my react project. I had to search on youtube for a tutorial which guided me in adding it to my project.
+- **lightbox gallery** - I had issues with switching images in the gallery by clicking the previous and next buttons. Also I had problem positioning the previous and next icon on the modal image. However, this was solved by using z-index.
+- **Grids** - I initial had issues with my grids as the site breaks whenever I tried to change the sizes of the screen. I had to use media query for each screen size needed.
+- **Cart** - I had issues with deleting added items from the cart. When the delete icon in the cart is clicked the whole page becomes blank with errors. Page has to be refreshed to come back. I sloved the problem by adding a reload function to the delete function so it automatically refreshes the page when delete icon is clicked 
+- **Thumnails Images** - I had issues with make the thumnails show active style and also change the large image source with on click. I solve it by merging both functions in a single function with worked.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Features to Implement in the future
 
-## Learn More
+- **Sign Up Page** - I want to use firebase authentication to enable users sign up with their details.
+- **Sign In Page** - I will add authentication to enable users sign in so they can see thier own avater and display name on the pages
+- **Theme Colors** - I would like to add different theme colors to enable users choose their prefered colors.
+- **Payment System** - When I learn about integrating payment system into a site, I would like to add it to the site to enable users make payment during checkouts. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Useful resources
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [NetNinja](https://netninja.dev/courses) - I took courses here for React and Firebase. I really liked the explanation pattern and will use it going forward.
+- [JavaScript](https://javascript.info/) - This website helped me understand some Javascript concept. I'd recommend it to anyone wanting to improve on thier javascript.
+- [Web Dev](https://web.dev/learn/) - This website helped me understand different CSS tools more, media query, flexbox, Z-index and so on. I'd recommend it to anyone wanting to improve on thier CSS.
 
-### Code Splitting
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The hosting platform that I've used for my project is Firebase hosting. To deploy my website to firebase, I used the following steps:
 
-### Analyzing the Bundle Size
+1. Created a project called 'EcommerceSite' in my firebase projects.
+2. Installed Firebase CLI 
+3. Initialised my project using the `firebase init` command.
+    1. Selected the firebase project to connect to my local project dirctory.
+    2. Specified a directory to use as my public root directory and name it 'build'
+    3. Chose configuration to my site to be 'One-page app'
+4. Deployed the site to firebase by using the `npm run build` command and then `firebase deploy` .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Website - [Zulkiful Mansur](https://www.your-site.com)
+- Frontend Mentor - [@zeek-mansur](https://www.frontendmentor.io/profile/zeek-mansur)
+- Twitter - [@Zeek_Mansur](https://twitter.com/Zeek_Mansur)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgments
 
-### Deployment
+- Thanks to my mentor, Alex Ford, for his feedback on my project's scope, design and functionality, and for hints on what I needed to do better to improve the project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- A special mention to my former mentor, Sunny Hebbar, who was there from the start of my Front end development journey.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

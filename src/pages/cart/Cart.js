@@ -1,7 +1,7 @@
 import './Cart.css'
 import deleteIcon from '../../assets/icon-delete.svg'
 
-export default function Cart({cart, setCart, amount, handleAddToCart, closeCart, items}) {
+export default function Cart({cart, setCart, amount, handleAddToCart, closeCart}) {
 
   
   const refreshPage = () => {
@@ -20,17 +20,10 @@ export default function Cart({cart, setCart, amount, handleAddToCart, closeCart,
   refreshPage()
   }
 
-  // const handleRemove = (title) => {
-
-  //   const arr = cart.filter((item) => item.title !== title)
-  //   setCart(arr)
-  //   handleAddToCart()
-
-  // }
-
   return (
     <div className='cartmodal-backdrop'>     
       <div className='cart-modal'>
+      <p onClick={closeCart} className='cart-close'>X</p>  
       <div className='header'> Cart </div>
       <div className='border'></div>
      <div className='cart-container'>
@@ -38,7 +31,7 @@ export default function Cart({cart, setCart, amount, handleAddToCart, closeCart,
      {cart.length === 1  && <div>
         {cart.map(item => (
            <div className='details' key={item.title}>
-            <img className='cart-sneakers' src={item.thumbnail[0].thumbnail} alt="product" />
+            <img className='cart-sneakers' src={item.thumbnails[0].thumbnail} alt="product" />
             <div className='items'><p>{item.title}</p>
             <p>${item.price} x {amount} <span>${item.price * amount}</span></p></div>
           </div>
