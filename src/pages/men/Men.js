@@ -1,8 +1,11 @@
+// styles
 import './Men.css'
 
 import React, { useState } from 'react'
+
 export default function Men() {
 
+  // data
   const [items] = useState([
     { title: 'Hoodie', price: 21.99 },
     { title: 'Men Sneakers', price: 34.99 },

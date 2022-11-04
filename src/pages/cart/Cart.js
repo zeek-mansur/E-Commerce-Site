@@ -1,4 +1,6 @@
+// styles 
 import './Cart.css'
+// delete icon 
 import deleteIcon from '../../assets/icon-delete.svg'
 
 export default function Cart({cart, setCart, amount, handleAddToCart, closeCart}) {
@@ -8,6 +10,7 @@ export default function Cart({cart, setCart, amount, handleAddToCart, closeCart}
     window.location.reload(false);
   }
   
+  // deleting items in the cart 
   const handleRemove = (title) => {
 
     setCart((prevCart) => {
