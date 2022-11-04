@@ -41,7 +41,7 @@ export default function LeftNav({open}) {
   return (
     <div>
         <Ul className= 'nav-links' open = {open}>
-             <li className='collections'><NavLink exact to = 'sneakers' >Collections</NavLink></li>
+             <li className='collections'><NavLink exact to = 'collections' >Collections</NavLink></li>
             <li><NavLink to = 'men' >Men</NavLink></li>
             <li><NavLink to = 'women' >Women</NavLink> </li>
             <li><NavLink to = 'about' >About</NavLink> </li>

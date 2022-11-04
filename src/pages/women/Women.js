@@ -1,9 +1,10 @@
+// styles
 import  './Women.css'
 
 import React, { useState } from 'react'
 
 export default function Women() {
-
+ // data
   const [items] = useState([
     { title: 'Hoodie', price: 21.99 },
     { title: 'Women Sneakers', price: 34.99 },

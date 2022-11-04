@@ -8,7 +8,6 @@ import Modal from './components/Modal';
 // components and pages
 import NavBar from './components/NavBar';
 import Cart from './pages/cart/Cart';
-import Sneakers from './pages/sneakers/Sneakers';
 import Men from './pages/men/Men';
 import Women from './pages/women/Women';
 import Collections from './pages/collections/Collections';
@@ -28,6 +27,7 @@ import Contact from './pages/contact/Contact';
 
 function App() {
 
+  // data
   const [items] = useState([
     {   Name: 'SNEAKER COMPANY',
         title: 'Fall Limited Edition Sneakers', 
@@ -51,6 +51,8 @@ function App() {
   const [amount, setAmount] = useState(1) 
   const [productImage, setProductImage] = useState(Product1)
   
+  // function to add style to thumnails and change source images 
+
   const handleThumbnails = (event) => {
  
     const thumbnailContainers = document.querySelectorAll('.thumbnail')
@@ -84,7 +86,7 @@ function App() {
 const openCart = ()  =>  {
 setShowCartModal(true)
 }  
-  
+  // increase and decrease items in cart 
    const increase = () => {
     setAmount(count => count + 1)
  }
@@ -95,6 +97,8 @@ setShowCartModal(true)
   }
   
  }
+
+ // adding items to cart 
 
  const handleAddToCart = (items) => {
   if (cart.indexOf(items) !== -1) return
@@ -113,8 +117,8 @@ setShowCartModal(true)
        closeCart = {closeCart}
         cart = {cart}/>
         <Routes>
-        <Route exact path="sneakers" 
-          element={ <Sneakers openModal = {openModal} 
+        <Route exact path="collections" 
+          element={ <Collections openModal = {openModal} 
           handleAddToCart = {handleAddToCart} 
           items = {items} 
           amount = {amount} 
@@ -124,7 +128,7 @@ setShowCartModal(true)
           productImage = {productImage} />} />
         <Route path="/men" element={ <Men />} />
         <Route path="/women" element={ <Women />} />
-        <Route path="/collections" element={ <Collections />} />
+        
         <Route path="/about" element={ <About />} />
         <Route path="/contact" element = {<Contact />} />
         </Routes>
